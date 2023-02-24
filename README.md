@@ -31,6 +31,6 @@ The following command will rebuild the Panel frontend. For NodeJS version 17 and
 ```
 cd /var/www/pterodactyl
 export NODE_OPTIONS=--openssl-legacy-provider # for NodeJS v17+
-yarn build:production # Build panel test
+yarn build:production # Build panel
 ```
 You can use command `yarn run watch` to view the progress of your changes in almost real-time for easier development. Once you're satisfied with your changes build the panel using the previously mentioned `yarn build:production` command.
