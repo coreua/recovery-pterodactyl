@@ -24,7 +24,7 @@ installTheme(){
 }
 
 updateTheme(){
-    cd /var/www/pterodactyl
+    cd /var/www/jexactyl
     yarn run build:production
     php artisan route:clear
     php artisan cache:clear
