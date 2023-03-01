@@ -23,6 +23,15 @@ installTheme(){
 
 }
 
+updateTheme(){
+    cd /var/www/pterodactyl
+    yarn run build:production
+    php artisan route:clear
+    php artisan cache:clear
+    php artisan view:clear
+
+}
+
 repair(){
     bash <(curl https://raw.githubusercontent.com/coreua/recovery-pterodactyl/main/repair.sh)
 }
@@ -31,7 +40,8 @@ echo "Copyright (c) 2023 CoreUa | admin@coreua.top"
 echo ""
 echo "[1] Repair panel (use if you have an error in the theme installation)"
 echo "[2] Install theme"
-echo "[3] Exit"
+echo "[3] Update theme"
+echo "[4] Exit"
 
 read -p "Please enter a number: " choice
 if [ $choice == "1" ]
@@ -43,6 +53,10 @@ if [ $choice == "2" ]
     installTheme
 fi
 if [ $choice == "3" ]
+    then
+    updateTheme
+fi
+if [ $choice == "4" ]
     then
     exit
 fi
